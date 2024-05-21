@@ -9,7 +9,6 @@ class Player(models.Model):
     winCount = models.IntegerField(null=True)
     loseCount = models.IntegerField(null=True)
     matchmakingRanking = models.FloatField(null=True)
-    winrate = models.FloatField(null=True)
 
 class CharacterClass(models.Model):
     type = models.CharField(primary_key=True, max_length=255)
@@ -21,7 +20,6 @@ class Character(models.Model):
 
     winCount = models.IntegerField(null=True)
     loseCount = models.IntegerField(null=True)
-    winrate = models.FloatField(null=True)
 
 class MatchRecord(models.Model):
     id = models.AutoField(primary_key=True)

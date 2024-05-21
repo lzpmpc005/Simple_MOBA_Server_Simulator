@@ -39,7 +39,7 @@ io.on('connection', (socket) => {
         } else {
             socket.emit('authenticated', { success: false, message: 'Invalid key' });
         }
-    });
+    }, 1000);
 
     socket.on('disconnect', () => {
         console.log('Client disconnected');

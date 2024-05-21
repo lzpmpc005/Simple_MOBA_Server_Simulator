@@ -13,6 +13,12 @@ def create_player(request):
 
         account = data.get("account")
         password = data.get("password")
+
+        if Player.objects.filter(account=account).exists():
+            return JsonResponse({'status': 'error', 'message': 'Username already exists in database.'}, status=400)
+        
+        if len(password) < 8:
+            return JsonResponse({'status': 'error', 'message': 'Password must be at least 8 characters.'}, status=400)
         
         new_player = Player(
             account = account, 
