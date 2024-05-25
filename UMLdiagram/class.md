@@ -1,4 +1,5 @@
 @startuml
+left to right direction
 class Player {
     <u>account</u>: String
     <u>password</u>: String
@@ -45,11 +46,12 @@ class Blacklist {
     misconduct: String
 }
 
-Player "1" --> "1..*" Character
-CharacterClass "1" --> "1..*" Character
-Player "1" --> "1..*" MatchRecord
-Player "1" --> "1..*" Message
-Player "1" --> "1..*" Blacklist
+Player "1" --> "0..*" Character
+CharacterClass "1" --> "0..*" Character
+Character "1" --> "0..*" MatchRecord
+Player "1" --> "0..*" MatchRecord
+Player "1" --> "0..*" Message
+Player "1" --> "0..*" Blacklist
 
 
 @enduml
