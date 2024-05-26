@@ -11,7 +11,7 @@ def create_player(request):
         except json.JSONDecodeError:
             return JsonResponse({'status': 'error', 'message': 'Invalid JSON data.'}, status=400)
 
-        account = data.get("account")
+        account = data.get("username")
         password = data.get("password")
 
         if Player.objects.filter(account=account).exists():
